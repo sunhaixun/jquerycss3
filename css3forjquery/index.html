@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>仿yunos</title>
+	<link rel="stylesheet" type="text/css" href="images/index.css">
+</head>
+<style>
+    #a{background:red;width:100px;height:100px;position: absolute;left: 0;top:0;}
+    #b{background:red;width:100px;height:100px;position: absolute;left: 110px;top:0;-webkit-backface-visibility: hidden;}
+</style>
+<body>
+<div class="feature">
+    <div id="overview" class="feature-item feature-overview step-1 step-2 step-3 step-4">
+        <div id="intro-hd" class="hd" style="height:175px;text-indent:-1500px">
+            <h1>YUNOS 2.7</h1>
+            <p>全新飞跃 前进不止步</p>
+        </div>
+        <div id="slash-screen-stage" class="intro-platform slash-screen-stage" id="yui_3_10_3_2_1400512444072_8">
+            <div class="slash-lock-scene" id="yui_3_10_3_2_1400512444072_10">
+                <div id="slash-lock-btn" style="-webkit-transform: scale(1);-moz-transform: scale(1);-transform: scale(1);" class="slash-lock-btn"></div>
+                <div id="slash-lock-orbit" class="slash-lock-orbit" style="opacity: 1; background-position: -6594px 0px;"></div>
+            </div>
+            <div id="slash-date" class="slash-item"></div>
+            <div id="slash-apps" class="slash-item"></div>
+        </div>
+    </div>
+    <div id="a"></div>
+    <div id="b"></div>
+</div>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.css3.js"></script>
+<script type="text/javascript">
+var a = $('#slash-screen-stage');
+var b = $('#slash-date');
+var c = $('#slash-apps');
+var d = $('#intro-hd');
+var e = $('#yui_3_10_3_2_1400512444072_10');
+var f = $('#slash-lock-orbit');
+var g = $('#slash-lock-btn');
+
+
+$.animation(a,{
+    animationName : 'slash-in',
+    animationDuration : '500ms',
+    animationTimingFunction : 'ease',
+    animationDelay : '100ms',
+    animationFillMode   : 'forwards'
+},function(){},function(){e.css('opacity', 1)}).animation(f,{
+    animationName : 'app-rotate',
+    animationDuration : '500ms',
+    animationTimingFunction : 'ease',
+    animationDelay : '100ms',
+    animationFillMode   : 'forwards'
+}).animation(g,{
+    animationName : 'date-slash-in',
+    animationDuration : '500ms',
+    animationTimingFunction : 'ease',
+    animationDelay : '0ms',
+    animationFillMode   : 'forwards'
+},function(){}, function(){e.css('opacity', 0)}).animation(b,{
+    animationName : 'date-slash-in',
+    animationDuration : '500ms',
+    animationTimingFunction : 'ease',
+    animationDelay : '1000ms',
+    animationFillMode   : 'forwards'
+},function(){
+    c.addClass('slash-apps')
+}).animation(d,{
+    animationName : 'slash-in',
+    animationDuration : '500ms',
+    animationTimingFunction : 'ease',
+    animationDelay : '100ms',
+    animationFillMode   : 'forwards'
+})
+
+
+// var elem = document.querySelector('.slash-date');
+// elem.addEventListener('webkitAnimationEnd', function(e){
+//1 slash-date 2slash-date  slash-apps 3 slash-screen-stage
+//     console.log(e)});
+
+
+// $('#a').transition({ x: '-40px' }, 250).
+//     transition({ x: '0px' }, 250).
+//     transition({ y: '-40px' }, 250).
+//     transition({ y: '0px' }, 250);
+// var a = $('#a');
+//  var b = $('#b');
+// $.animation(a,{
+//     animationName : 'slash-in',
+//     animationDuration : '5s',
+//     animationTimingFunction : 'ease',
+//     animationDelay : '0.5s'
+// }).
+// animation(b,{
+//     animationName : 'slash-in',
+//     animationDuration : '5s',
+//     animationTimingFunction : 'ease',
+//     animationDelay : '0.5s'
+// });
+</script>
+</body>
+</html>
