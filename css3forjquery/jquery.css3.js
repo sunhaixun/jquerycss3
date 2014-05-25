@@ -104,7 +104,6 @@ $.cssEase = {
 	'out':            'ease-out',
 	'in-out':         'ease-in-out',
 	'snap':           'cubic-bezier(0,1,.5,1)',
-	// Penner equations
 	'easeOutCubic':   'cubic-bezier(.215,.61,.355,1)',
 	'easeInOutCubic': 'cubic-bezier(.645,.045,.355,1)',
 	'easeInCirc':     'cubic-bezier(.6,.04,.98,.335)',
@@ -188,11 +187,7 @@ Animation.prototype = {
       Animation.prototype.set.apply(this, args);
     },
 
-    // ### set()
-    // Sets a property.
-    //
-    //     t.set('scale', 2, 4);
-    //
+   
     set: function(prop) {
       var args = Array.prototype.slice.apply(arguments, [1]);
       if (this.setter[prop]) {
@@ -239,7 +234,7 @@ Animation.prototype = {
         this.animationFillMode = theta;
       },
 
-      // ### perspectvie
+      
       animationPlayState: function(theta) {
         this.animationPlayState = theta;
       }
@@ -334,7 +329,7 @@ $.animation = $.anim = function(elem, properties,startcallback,endcallback) {
 
     
     var deferredRun = function(next) {
-        this.offsetWidth; // force a repaint
+        this.offsetWidth; 
         run(next);
     };
 
