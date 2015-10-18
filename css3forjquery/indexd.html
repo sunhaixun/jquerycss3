@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>仿yunos</title>
+	<link rel="stylesheet" type="text/css" href="images/index.css">
+</head>
+<style>
+    #a{background:red;width:100px;height:100px;position: absolute;left: 0;top:0;}
+    #b{background:red;width:100px;height:100px;position: absolute;left: 110px;top:0;-webkit-backface-visibility: hidden;}
+</style>
+<body>
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$('#list').delegate('li', 'click', function(e){
+    console.log(this);
+    console.log(e);
+    alert(1);
+})
+</script>
+</body>
+</html>

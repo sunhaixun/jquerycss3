@@ -1,6 +1,6 @@
 /*!
  * jQuery css3 Animation plugin
- * author sunhaixun
+ * author sunhaixun china
  */
 
  (function($){

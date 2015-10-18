@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvasTest</title>
+</head>
+<body>
+<style type="text/css">
+#demo{
+	width:500px;
+	margin: 0 auto;
+}
+</style>
+<div id="demo">
+	<canvas id="canvas" width="500" height="250"></canvas>
+</div>
+<script type="text/javascript">
+var start = 100;
+var end = 50;
+var hight = 150;
+var low = 20;
+var canvas = document.querySelector('#canvas').getContext('2d');
+canvas.fillStyle = '#0000ff';
+canvas.fillRect(0,100,10,50)
+canvas.beginPath();
+canvas.moveTo(5, 50);
+canvas.lineTo(5, 170);
+canvas.stroke();
+</script>
+</body>
+</html>

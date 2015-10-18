@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	.game-wrap {
+		margin:0 auto;
+		width: 750px;
+		position: relative;
+	}
+	.game-main {
+		height: 360px;
+		position: relative;
+	}
+	.prize-odd {
+		background: #fee7d2 url(https://i.alipayobjects.com/i/localhost/png/201410/3fdmCScAwn.png) no-repeat -9999em -9999em;
+	}
+	.prize-even {
+		background: #f3d9c0 url(https://i.alipayobjects.com/i/localhost/png/201410/3fdfWhqUmr.png) no-repeat -9999em -9999em;
+	}
+	.prize-20 {
+		background-position: -5px -88px;
+	}
+	.prize-100 {
+		background-position: -5px -188px;
+	}
+	.prize-1111 {
+		background-position: -5px -288px;
+	}
+	.prize-5 {
+		background-position: -5px 12px;
+	}
+	.prize-none {
+		background-position: -5px -388px;
+	}
+	.game-prize {
+		width: 150px;
+		height: 120px;
+		position: absolute;
+	}
+	.game-action {
+		overflow: hidden;
+		width: 450px;
+		height: 120px;
+		position: absolute;
+		left: 150px;
+		top: 120px;
+		background: url(https://i.alipayobjects.com/i/localhost/png/201410/3fdeN3GTJF.png) repeat;
+	}
+	.game-action-mask {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		opacity: .3;
+		filter: alpha(opacity=30);
+	}
+	.game-action-main {
+		position: absolute;
+		top: 0;
+	}
+
+	.game-info {
+		display: table-cell;
+		vertical-align: middle;
+		visibility: hidden;
+		padding: 6px 78px 0;
+		width: 294px;
+		height: 40px;
+		line-height: 20px;
+		text-align: center;
+		font-size: 14px;
+		color: #FEE7D2;
+	}
+	/*.game-button {
+		display: block;
+		margin: 0 auto;
+		width: 268px;
+		height: 80px;
+		text-indent: -9999em;
+		background-position: 0 -164px;
+		cursor: pointer;
+	}*/
+	.game-prize-mask {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		opacity: .3;
+		filter: alpha(opacity=30);
+	}
+	.game-action-main {
+		position: absolute;
+		top: 0;
+	}
+	.cg-timeline .current s, .game-button {
+		background: url(https://g.alicdn.com/fi/tmb/1.0.22/img/png24.png) no-repeat -9999em -9999em;
+		_background: url(https://g.alicdn.com/fi/tmb/1.0.22/img/png24.png) no-repeat -9999em -9999em;
+	}
+	.game-button {
+		display: block;
+		margin: 0 auto;
+		width: 268px;
+		height: 80px;
+		text-indent: -9999em;
+		background-position: 0 -164px;
+		cursor: pointer;
+	}
+	
+	</style>
+</head>
+<body>
+<div class="game-wrap"> 
+	<div class="game-main" id="J_Game"> 
+		<div class="game-prize prize-odd prize-20" style="left:0px;top:0px;">
+			<div class="game-prize-mask"></div>
+		</div> 
+			<div class="game-prize prize-even prize-100" style="left:150px;top:0px;">
+			<div class="game-prize-mask"></div>
+		</div> 
+		<div class="game-prize prize-odd prize-1111" style="left:300px;top:0px;">
+			<div class="game-prize-mask"></div>
+		</div> 
+		<div class="game-prize prize-even prize-5" style="left:450px;top:0px;">
+			<div class="game-prize-mask"></div>
+		</div>
+		 <div class="game-prize prize-odd prize-none" style="left:600px;top:0px;">
+		 	<div class="game-prize-mask"></div>
+		 </div> 
+		 <div class="game-prize prize-even prize-100" style="left:600px;top:120px;">
+		 	<div class="game-prize-mask"></div>
+		 </div> 
+		 <div class="game-prize prize-odd prize-none" style="left:600px;top:240px;">
+		 	<div class="game-prize-mask"></div>
+		 </div> 
+		 <div class="game-prize prize-even prize-20" style="left:450px;top:240px;">
+		 	<div class="game-prize-mask"></div>
+		 </div>
+		 <div class="game-prize prize-odd prize-100" style="left:300px;top:240px;">
+		 	<div class="game-prize-mask"></div>
+		 </div> 
+	 	<div class="game-prize prize-even prize-1111" style="left:150px;top:240px;">
+	 		<div class="game-prize-mask"></div>
+	 	</div> 
+		 <div class="game-prize prize-odd prize-5" style="left:0px;top:240px;">
+		 	<div class="game-prize-mask"></div>
+		 </div> 
+		 <div class="game-prize prize-even prize-none" style="left:0px;top:120px;">
+		 	<div class="game-prize-mask"></div>
+		 </div> 
+	</div> 
+	<div class="game-action"> 
+		 <div class="game-action-mask"></div> 
+		 <div class="game-action-main"> 
+		 	<div class="game-info" id="J_ChongInfo" style="visibility: visible;"> 
+		 		<p>一大波¥1111红包疯抢中，再不出手就晚啦！</p> 
+		 	</div> 
+		 	<a href="javascript:;" target="_self" id="J_GameButton" class="game-button J_Chong" data-date="1415107953432" seed="game-button-chong" smartracker="on">充值抢红包</a> 
+		 </div> 
+	</div> 
+</div>
+<div id="timeout">5</div>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+var target = -1;
+var elemList = $('.game-prize-mask');
+var prize = 6;
+var speed  = 400;
+var time = null;
+var timeout = 5;
+var ts1 = [];
+var str = 0;
+var flag = true;
+var flags = true
+var allN;
+
+var data = [ 
+	{ 
+		id : 1,
+		prize : '1100红包',
+		probability : 1,
+		size : [3, 10]
+
+	},
+
+	{ 
+		id : 2,
+		prize : '100红包',
+		probability : 2,
+		size : [2, 9]
+
+	},
+
+	{ 
+		id : 3,
+		prize : '20红包',
+		probability : 3,
+		size : [1, 8]
+
+	},
+
+	{ 
+		id : 4,
+		prize : '5红包',
+		probability : 50,
+		size : [4, 11]
+
+	}
+]
+
+//初始时间
+var startTime = new Date();
+var curSpeed;
+var randomsort = function(a, b) {
+     return Math.random()>.5 ? -1 : 1; 
+}
+// var arr = [1, 2, 3, 4, 5];
+// var arr2 = arr.sort(randomsort);
+// alert(arr2);
+
+
+var randomNum = function (min, max) { // 获取2个值之间的随机数 
+	var range = max - min;
+	var rand = Math.random();
+	return (min + Math.round(range * rand))
+}
+
+
+var square = function(duration, size) {
+	
+	time = setTimeout(function(){
+
+		var currentTime = + new Date();
+		if (startTime - currentTime > duration) {
+			console.log("时间结束")
+			clearTimeout(time);
+		}
+
+		if (target > allN) {
+			//console.log(target);
+			console.log('wrong');
+			clearTimeout(time);
+			return;
+		}
+		elemList.css('background','black');
+		target++;
+		//待定
+		
+		var tt = target;
+		//tt = (tt >= 13) ? (tt - 12) : tt;
+		if (target >= 12) {
+			//alert(target);
+			tt = target -12;
+			console.log('true1');
+			if (target >= 24) {
+				//alert(target);
+				tt = target - 24;
+				console.log('true2');
+				if (target >= 36) {
+					//alert(target);
+					tt = target - 36;
+					console.log('true3');
+				}
+			} 
+		} 
+		
+		
+		console.log("target is target" + target);
+		console.log("tt is" + tt);
+		//target = (target > 24) ? 0 : target;
+		elemList.eq(tt).css('background', 'burlywood');
+		
+
+		if (target <= 6) {
+			speed = ~~(speed / 1.3);
+			ts1.push(speed);
+			console.log("加速"+ speed)
+		} else if (allN - target <= 6) {
+			if (flags) {
+				speed = curSpeed;
+				flags = false;
+			}
+			
+			console.log("减速"+ speed)
+			speed = ~~(speed * 1.3);
+
+			
+			//ts.push(speed);
+		} else {
+			if (flag) {
+				flag = false;
+				curSpeed = ts1.pop();
+				console.log("curSpeed" + curSpeed);
+			}
+			console.log("匀速"+ speed)			
+		}
+
+		clearTimeout(time);
+		square(6000, allN);
+	},speed)
+}
+
+var probability = function () { //概率计算 通过计算得出中奖
+	var result = randomNum(1, 100);
+	var min = 0,
+		max = 0,
+		step = 0;
+	var returnObj = false;
+	var len = data.length;
+	var index = 0;
+
+	//中奖概率 得到奖品
+	for (var i = 0; i < len; i++) {
+		var currentP = data[i].probability;
+		step += currentP;
+		min = 100 - step;
+		max = min + currentP;
+		if (result > min && result <= max) {
+
+			index = i;
+			returnObj = true;
+			var cur = index + 1;
+			console.log("中" + cur + "等奖")
+			//return returnObj;
+			break;
+		} 
+	}
+
+	//页面上奖品一般有两个随机得到一个
+	if (returnObj) { //中几等奖
+		var randomN = data[index].size.sort(randomsort);
+		console.log(randomN);
+		datas = randomN[0]// 奖品位置
+		console.log(datas);
+	} else {
+		console.log("继续加油")
+		var size = [5, 7, 12]
+		var randomN = size.sort(randomsort);
+		datas = randomN[0];
+		console.log(datas);
+	}
+
+	 allN = 22 + datas ;
+	 console.log(allN);
+	square(6000, allN);
+
+}
+
+probability();
+
+var teen = function() { //缓冲动画
+	
+
+}
+
+
+
+
+
+</script>
+</body>
+</html>
